@@ -11,16 +11,16 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [primaryColor, setPrimaryColor] = useState('#00FF41');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [primaryColor, setPrimaryColor] = useState('#3B82F6');
 
   useEffect(() => {
     // Load saved preferences from localStorage
     const savedDarkMode = localStorage.getItem('darkMode');
-    const savedColor = localStorage.getItem('primaryColor') || '#00FF41';
+    const savedColor = localStorage.getItem('primaryColor') || '#3B82F6';
     
-    // Default to dark mode if no preference saved
-    const darkMode = savedDarkMode === null ? true : savedDarkMode === 'true';
+    // Default to light mode if no preference saved
+    const darkMode = savedDarkMode === null ? false : savedDarkMode === 'true';
     
     setIsDarkMode(darkMode);
     setPrimaryColor(savedColor);

@@ -99,6 +99,11 @@ p, span, a, li, label, input, textarea, button {
     box-shadow: none !important;
     backdrop-filter: none !important;
     padding: 0 2rem !important; /* Flush to top */
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    top: 0 !important;
 }
 
 .nav-content {
