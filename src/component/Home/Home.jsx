@@ -1,96 +1,92 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import './Home.css';
+import profileData from '../../../data/profile.json';
+import MetaBalls from '../UI/MetaBalls/MetaBalls';
+import { useTheme } from '../../context/ThemeContext';
+
 
 const Home = () => {
-  const typewriterRef = useRef(null);
-  const cursorRef = useRef(null);
+  const { primaryColor } = useTheme();
 
-  useEffect(() => {
-    const text = "Full Stack Developer";
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const pauseTime = 3000;
-
-    const type = () => {
-      const currentText = text.substring(0, charIndex);
-      if (typewriterRef.current) {
-        typewriterRef.current.textContent = currentText;
-      }
-
-      if (!isDeleting) {
-        if (charIndex < text.length) {
-          charIndex++;
-          setTimeout(type, typingSpeed);
-        } else {
-          setTimeout(() => {
-            isDeleting = true;
-            type();
-          }, pauseTime);
-        }
-      } else {
-        if (charIndex > 0) {
-          charIndex--;
-          setTimeout(type, deletingSpeed);
-        } else {
-          isDeleting = false;
-          setTimeout(type, pauseTime);
-        }
-      }
-    };
-
-    type();
-  }, []);
-
-  const skillIcons = [
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML5" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", alt: "CSS3" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg", alt: "Angular" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", alt: "Java" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", alt: "Spring" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", alt: "Python" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", alt: "AWS" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg", alt: "Azure" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg", alt: "Jenkins" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", alt: "GitHub" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", alt: "Docker" }
-  ];
+  const handleLetsTalkClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
-    <section id="home" className="section">
-      <div className="animated-background">
-        {skillIcons.map((skill, index) => (
-          <motion.img
-            key={index}
-            className="floating-skill"
-            src={skill.src}
-            alt={skill.alt}
-            initial={{ 
-              x: Math.random() * 100, 
-              y: Math.random() * 100,
-              rotate: Math.random() * 360
-            }}
-            animate={{
-              x: [null, Math.random() * 100],
-              y: [null, Math.random() * 100],
-              rotate: [null, Math.random() * 360 + 360]
-            }}
-            transition={{
-              duration: 20 + Math.random() * 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "linear"
-            }}
+    <section id="home" className="section home-dark-section">
+      <div className="home-content-container">
+        {/* Profile Avatar Card */}
+        <motion.div 
+          className="home-profile-card"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <MetaBalls
+            color={primaryColor}
+            cursorBallColor={primaryColor}
+            cursorBallSize={2}
+            ballCount={15}
+            animationSize={30}
+            enableMouseInteraction
+            enableTransparency={true}
+            hoverSmoothness={0.15}
+            clumpFactor={1}
+            speed={0.3}
           />
-        ))}
+          <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="home-profile-image-container">
+              <img 
+                src="/assets/profile_avatar.png" 
+                alt={`${profileData.name} Profile`} 
+                className="home-profile-image" 
+              />
+            </div>
+          
+          <h1 className="home-title-dark">
+            {profileData.name || "Krishna Patel"}
+          </h1>
+
+          {/* Social Icons row */}
+          <div className="profile-social-icons">
+            {profileData.socialLinks?.map((link, index) => (
+              <a 
+                key={index}
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={`profile-social-link ${link.isSvg ? 'leetcode-icon-link' : ''}`}
+                title={link.platform}
+              >
+                {link.isSvg ? (
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d={link.svgPath}/>
+                  </svg>
+                ) : (
+                  <i className={link.iconClass}></i>
+                )}
+              </a>
+            ))}
+          </div>
+
+          <button 
+            className="home-talk-btn"
+            onClick={handleLetsTalkClick}
+          >
+            <span>Let's Talk</span>
+            <i className="fas fa-arrow-right"></i>
+          </button>
+          </div>
+        </motion.div>
       </div>
-      
-      <div className="home-content">
-        <motion.h1 
-          className="home-title"
-          initial= 
+    </section>
+  );
+};
+
+export default Home;

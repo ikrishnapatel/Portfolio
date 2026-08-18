@@ -1,0 +1,1545 @@
+/* ====================================================
+   BRUTALISM DESIGN SYSTEM - FULL OVERRIDE
+   ==================================================== */
+
+/* Google Font Import - Jersey 10 */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+/* ====================================================
+   DESIGN TOKENS
+   ==================================================== */
+:root {
+    --brutal-bg: #0a0a0a;
+    --brutal-fg: #ffffff;
+    --brutal-accent: #00FF41;
+    --brutal-accent-dim: #00cc33;
+    --brutal-border: #ffffff;
+    --brutal-border-width: 3px;
+    --brutal-card-bg: #111111;
+    --brutal-muted: #ffffff; /* Make muted text white in dark theme */
+    --brutal-danger: #ff3333;
+    --brutal-font: "Jersey 10", sans-serif;
+    --brutal-shadow: 4px 4px 0px var(--brutal-accent);
+    --brutal-shadow-hover: 6px 6px 0px var(--brutal-accent);
+    --brutal-shadow-white: 4px 4px 0px var(--brutal-fg);
+    --brutal-transition: all 0.15s ease;
+}
+
+/* ====================================================
+   GLOBAL BRUTALISM RESETS
+   ==================================================== */
+* {
+    border-radius: 0 !important;
+}
+
+body {
+    font-family: var(--brutal-font) !important;
+    background-color: var(--brutal-bg) !important;
+    color: var(--brutal-fg) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Override all existing rounded corners */
+.home-profile-card,
+.home-profile-image-container,
+.about-stat-card,
+.skill-card,
+.skill-tab,
+.timeline-card,
+.project-card,
+.contact-container,
+.submit-btn,
+.home-talk-btn,
+.tech-tag,
+.client-badge,
+.certified-badge,
+.nav-icons-container,
+.profile-social-link,
+.nav-links a i,
+.form-group input,
+.form-group textarea,
+.footer {
+    border-radius: 0 !important;
+}
+
+/* ====================================================
+   TYPOGRAPHY - RAW MONOSPACE
+   ==================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--brutal-font) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-weight: 800 !important;
+}
+
+p, span, a, li, label, input, textarea, button {
+    font-family: var(--brutal-font) !important;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    color: var(--brutal-fg) !important;
+    letter-spacing: 0.1em !important;
+    border-bottom: var(--brutal-border-width) solid var(--brutal-accent) !important;
+    padding-bottom: 1rem !important;
+    margin-bottom: 3rem !important;
+    text-align: left !important;
+    display: inline-block !important;
+}
+
+/* ====================================================
+   NAVIGATION - BRUTALIST TOP BAR
+   ==================================================== */
+.top-nav {
+    background: var(--brutal-bg) !important;
+    border-bottom: var(--brutal-border-width) solid var(--brutal-border) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 2rem !important; /* Flush to top */
+}
+
+.nav-content {
+    max-width: 100% !important; /* 100% width instead of 1200px */
+}
+
+.nav-container {
+    justify-content: flex-end !important; /* Push buttons to the right */
+}
+
+.top-nav.scrolled {
+    background: var(--brutal-bg) !important;
+    box-shadow: none !important;
+}
+
+.nav-icons-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+.nav-links a i {
+    display: none !important;
+}
+
+.nav-text {
+    display: inline !important;
+    font-family: var(--brutal-font) !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: var(--brutal-fg) !important;
+    transition: var(--brutal-transition) !important;
+}
+
+.nav-links a {
+    padding: 0.6rem 1rem !important;
+    border: 2px solid transparent !important;
+    transition: var(--brutal-transition) !important;
+    text-decoration: none !important;
+}
+
+.nav-links a:hover .nav-text {
+    color: var(--brutal-accent) !important;
+}
+
+.nav-links a:hover i {
+    display: none !important;
+}
+
+.nav-links a.active {
+    border: 2px solid var(--brutal-accent) !important;
+    background: var(--brutal-accent) !important;
+    box-shadow: none !important;
+}
+
+.nav-links a.active .nav-text {
+    color: var(--brutal-bg) !important;
+}
+
+.nav-links a.active i {
+    display: none !important;
+    animation: none !important;
+}
+
+/* Remove tooltip on brutalism nav */
+.nav-links a::before {
+    display: none !important;
+}
+
+/* Logo */
+.logo img {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* ====================================================
+   HOME - RAW PROFILE CARD
+   ==================================================== */
+.split-grid-left {
+    border-right: var(--brutal-border-width) solid var(--brutal-border) !important;
+}
+
+.home-dark-section {
+    background: var(--brutal-bg) !important;
+}
+
+.home-profile-card {
+    background: var(--brutal-card-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    box-shadow: var(--brutal-shadow) !important;
+    padding: 5rem 2.5rem !important;
+    max-width: 420px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.home-profile-image-container {
+    width: 150px !important;
+    height: 150px !important;
+    border: var(--brutal-border-width) solid var(--brutal-accent) !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+    overflow: hidden !important;
+}
+
+.home-profile-image {
+    border-radius: 0 !important;
+}
+
+.home-title-dark {
+    font-family: var(--brutal-font) !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--brutal-fg) !important;
+}
+
+/* Social Icons - square brutalist buttons */
+.profile-social-icons {
+    gap: 1rem !important;
+}
+
+.profile-social-link {
+    width: 48px !important;
+    height: 48px !important;
+    border: 2px solid var(--brutal-border) !important;
+    background: transparent !important;
+    color: var(--brutal-fg) !important;
+    font-size: 1.3rem !important;
+    transition: var(--brutal-transition) !important;
+    box-shadow: none !important;
+}
+
+.profile-social-link:hover {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-accent) !important;
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 4px 4px 0px var(--brutal-fg) !important;
+}
+
+.color-options {
+    position: absolute !important;
+    background: var(--brutal-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    padding: 0.5rem !important;
+    border-radius: 0 !important;
+}
+
+@media (min-width: 1025px) {
+    .theme-switcher.active .brutal-color-options {
+        display: flex !important;
+        justify-content: space-between !important;
+        height: 250px !important;
+        flex-direction: column !important;
+    }
+
+    .color-options {
+        top: -260px !important;
+        left: -6px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .color-options {
+        top: -40px !important;
+        left: -6px !important;
+        flex-direction: row !important;
+    }
+}
+
+@media (max-width: 626px) {
+    .brutal-color-options {
+        position: absolute !important;
+        bottom: 90px !important;
+        right: 0 !important;
+        top: auto !important;
+        left: auto !important;
+    }
+    .theme-switcher.active .brutal-color-options {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+}
+
+/* Let's Talk Button - Brutalist */
+.home-talk-btn {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-accent) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    padding: 1rem 2.5rem !important;
+    font-size: 1rem !important;
+    box-shadow: var(--brutal-shadow-white) !important;
+    transition: var(--brutal-transition) !important;
+    cursor: pointer !important;
+}
+
+.home-talk-btn:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0px var(--brutal-fg) !important;
+    background: var(--brutal-accent) !important;
+}
+
+/* ====================================================
+   ABOUT - GIANT MONOSPACE HEADINGS
+   ==================================================== */
+.about-section {
+    background: var(--brutal-bg) !important;
+}
+
+.about-tagline {
+    font-family: var(--brutal-font) !important;
+    font-size: 3.2rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--brutal-accent) !important;
+    line-height: 1.15 !important;
+    border-left: 6px solid var(--brutal-accent) !important;
+    padding-left: 1.5rem !important;
+}
+
+.about-heading {
+    font-family: var(--brutal-font) !important;
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    color: var(--brutal-muted) !important;
+    text-transform: none !important;
+    line-height: 1.7 !important;
+    margin-top: 1.5rem !important;
+}
+
+.about-stat-card {
+    background: var(--brutal-card-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    box-shadow: var(--brutal-shadow) !important;
+    transition: var(--brutal-transition) !important;
+    padding: 2.5rem 1.5rem !important;
+}
+
+.about-stat-card:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: var(--brutal-shadow-hover) !important;
+}
+
+.about-stat-number {
+    font-family: var(--brutal-font) !important;
+    font-weight: 800 !important;
+    color: var(--brutal-accent) !important;
+}
+
+.about-stat-label {
+    font-family: var(--brutal-font) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: var(--brutal-muted) !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+}
+
+/* ====================================================
+   SKILLS - BRUTALIST TABS AND CARDS
+   ==================================================== */
+.skills-tabs {
+    border-bottom: var(--brutal-border-width) solid var(--brutal-border) !important;
+    gap: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 2.5rem !important;
+}
+
+.skill-tab {
+    border: 2px solid var(--brutal-border) !important;
+    border-bottom: none !important;
+    background: transparent !important;
+    color: var(--brutal-muted) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-size: 0.85rem !important;
+    padding: 0.8rem 1.5rem !important;
+    cursor: pointer !important;
+    transition: var(--brutal-transition) !important;
+    box-shadow: none !important;
+}
+
+.skill-tab:hover {
+    color: var(--brutal-fg) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.skill-tab.active {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+.skill-card {
+    background: var(--brutal-card-bg) !important;
+    border: 2px solid var(--brutal-border) !important;
+    box-shadow: var(--brutal-shadow) !important;
+    transition: var(--brutal-transition) !important;
+}
+
+.skill-card:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: var(--brutal-shadow-hover) !important;
+}
+
+.skill-card.certified {
+    border-color: var(--brutal-accent) !important;
+}
+
+.skill-card-title {
+    font-family: var(--brutal-font) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--brutal-fg) !important;
+}
+
+.skill-card-icon {
+    border: 2px solid var(--brutal-border) !important;
+    background: var(--brutal-bg) !important;
+}
+
+.skill-card-exp {
+    font-family: var(--brutal-font) !important;
+    color: var(--brutal-accent) !important;
+    box-shadow: none !important;
+}
+
+.certified-badge {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.certification-info {
+    font-family: var(--brutal-font) !important;
+    border-top: 1px solid var(--brutal-border) !important;
+    padding-top: 0.75rem !important;
+    color: var(--brutal-muted) !important;
+}
+
+/* ====================================================
+   EXPERIENCE - THICK-BORDERED TIMELINE
+   ==================================================== */
+.timeline-card {
+    background: var(--brutal-card-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    border-left: 6px solid var(--brutal-accent) !important;
+    box-shadow: var(--brutal-shadow) !important;
+    transition: var(--brutal-transition) !important;
+}
+
+.timeline-card:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: var(--brutal-shadow-hover) !important;
+}
+
+.timeline-header h3 {
+    font-family: var(--brutal-font) !important;
+    color: var(--brutal-fg) !important;
+    text-transform: uppercase !important;
+}
+
+.timeline-date {
+    font-family: var(--brutal-font) !important;
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    padding: 0.3rem 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 0 !important;
+}
+
+.timeline-content h4 {
+    font-family: var(--brutal-font) !important;
+    color: var(--brutal-fg) !important;
+}
+
+.timeline-content p {
+    font-size: 1.1rem !important;
+}
+
+.client-badge {
+    background: var(--brutal-fg) !important;
+    color: var(--brutal-bg) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 700 !important;
+    padding: 0.2rem 0.6rem !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+}
+
+.timeline-details li,
+.nested-details li {
+    color: var(--brutal-muted) !important;
+    font-family: var(--brutal-font) !important;
+    font-size: 1.2rem !important;
+    line-height: 1.6 !important;
+}
+
+.timeline-details li::before,
+.nested-details li::before {
+    color: var(--brutal-accent) !important;
+}
+
+.location {
+    color: var(--brutal-muted) !important;
+    font-family: var(--brutal-font) !important;
+}
+
+.exp-project {
+    background: transparent !important;
+}
+
+.exp-project h5 {
+    font-family: var(--brutal-font) !important;
+    color: var(--brutal-accent) !important;
+    text-transform: uppercase !important;
+    font-size: 1.4rem !important;
+}
+
+/* ====================================================
+   PROJECTS - HARD-SHADOW CARDS
+   ==================================================== */
+.projects-grid {
+    gap: 2rem !important;
+}
+
+.project-card {
+    background: var(--brutal-card-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    box-shadow: var(--brutal-shadow) !important;
+    transition: var(--brutal-transition) !important;
+    padding: 2rem !important;
+}
+
+.project-card:hover {
+    transform: translate(-3px, -3px) !important;
+    box-shadow: 7px 7px 0px var(--brutal-accent) !important;
+}
+
+.project-card h3 {
+    font-family: var(--brutal-font) !important;
+    text-transform: uppercase !important;
+    color: var(--brutal-fg) !important;
+    font-weight: 800 !important;
+    border-bottom: 2px solid var(--brutal-accent) !important;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.project-card p {
+    color: var(--brutal-muted) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+}
+
+.tech-tag {
+    background: transparent !important;
+    border: 2px solid var(--brutal-accent) !important;
+    color: var(--brutal-accent) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.3rem 0.8rem !important;
+}
+
+.project-link {
+    display: inline-block !important;
+    background: var(--brutal-fg) !important;
+    color: var(--brutal-bg) !important;
+    border: 2px solid var(--brutal-fg) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    padding: 0.6rem 1.5rem !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    transition: var(--brutal-transition) !important;
+    margin-top: 1rem !important;
+}
+
+.project-link:hover {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+/* ====================================================
+   CONTACT - BRUTALIST FORM
+   ==================================================== */
+.contact-section-wrapper {
+    background: var(--brutal-bg) !important;
+}
+
+.contact-container {
+    background: var(--brutal-card-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    box-shadow: var(--brutal-shadow) !important;
+    max-width: 700px !important;
+}
+
+.contact-form {
+    padding: 2.5rem !important;
+}
+
+.form-group label {
+    font-family: var(--brutal-font) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    color: var(--brutal-fg) !important;
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--brutal-bg) !important;
+    border: 2px solid var(--brutal-border) !important;
+    color: var(--brutal-fg) !important;
+    font-family: var(--brutal-font) !important;
+    font-size: 0.95rem !important;
+    padding: 0.9rem 1rem !important;
+    transition: var(--brutal-transition) !important;
+    outline: none !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 0 0 0 2px var(--brutal-accent) !important;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--brutal-danger) !important;
+}
+
+.error-message {
+    color: var(--brutal-danger) !important;
+    font-family: var(--brutal-font) !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+}
+
+.char-count {
+    font-family: var(--brutal-font) !important;
+    color: var(--brutal-muted) !important;
+    font-size: 0.8rem !important;
+}
+
+.submit-btn {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-accent) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-size: 1rem !important;
+    padding: 1rem 2.5rem !important;
+    cursor: pointer !important;
+    box-shadow: var(--brutal-shadow-white) !important;
+    transition: var(--brutal-transition) !important;
+}
+
+.submit-btn:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0px var(--brutal-fg) !important;
+}
+
+.submit-btn:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+/* ====================================================
+   FOOTER - BRUTALIST SEPARATOR
+   ==================================================== */
+.footer {
+    background: var(--brutal-bg) !important;
+    border-top: var(--brutal-border-width) solid var(--brutal-border) !important;
+    width: 100% !important;
+}
+
+.footer-content {
+    font-family: var(--brutal-font) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+}
+
+.copyright p {
+    font-family: var(--brutal-font) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-size: 0.8rem !important;
+    color: var(--brutal-muted) !important;
+}
+
+.footer-social a {
+    width: 42px !important;
+    height: 42px !important;
+    border: 2px solid var(--brutal-border) !important;
+    color: var(--brutal-fg) !important;
+    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: var(--brutal-transition) !important;
+    font-size: 1.1rem !important;
+}
+
+.footer-social a:hover {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+/* ====================================================
+   SECTION BACKGROUNDS AND SEPARATORS
+   ==================================================== */
+.section {
+    background: var(--brutal-bg) !important;
+}
+
+.section-content {
+    margin: 0 !important;
+}
+
+.split-grid-container {
+    background: var(--brutal-bg) !important;
+}
+
+.split-grid-left {
+    background: var(--brutal-bg) !important;
+}
+
+.split-grid-right {
+    background: var(--brutal-bg) !important;
+}
+
+/* Section separators */
+.split-grid-right section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.split-grid-right section:last-child {
+    border-bottom: none !important;
+}
+
+/* ====================================================
+   SCROLLBAR - BRUTALIST
+   ==================================================== */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--brutal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brutal-accent);
+    border: 2px solid var(--brutal-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brutal-fg);
+}
+
+/* ====================================================
+   SELECTION COLOR
+   ==================================================== */
+::selection {
+    background: var(--brutal-accent);
+    color: var(--brutal-bg);
+}
+
+/* ====================================================
+   RESPONSIVE OVERRIDES
+   ==================================================== */
+@media (max-width: 1024px) {
+    .split-grid-left {
+        border-right: none !important;
+        border-bottom: var(--brutal-border-width) solid var(--brutal-border) !important;
+    }
+
+    .about-tagline {
+        font-size: 2.4rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem !important;
+    }
+
+    .about-tagline {
+        font-size: 2rem !important;
+    }
+
+    .home-title-dark {
+        font-size: 1.6rem !important;
+    }
+
+    .nav-text {
+        font-size: 0.7rem !important;
+    }
+}
+
+/* ====================================================
+   THEME CONTROLS - BRUTALIST STYLE
+   ==================================================== */
+.theme-controls.brutal-controls {
+    display: flex !important;
+    position: fixed !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: 2rem !important;
+    right: 2rem !important;
+    z-index: 1000 !important;
+    gap: 0.75rem !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+}
+
+.brutal-btn {
+    width: 48px !important;
+    height: 48px !important;
+    background: var(--brutal-bg) !important;
+    border: 2px solid var(--brutal-border) !important;
+    color: var(--brutal-fg) !important;
+    font-size: 1.2rem !important;
+    cursor: pointer !important;
+    transition: var(--brutal-transition) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 3px 3px 0px var(--brutal-accent) !important;
+}
+
+.brutal-btn:hover {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-accent) !important;
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 5px 5px 0px var(--brutal-fg) !important;
+}
+
+/* Color picker panel */
+.theme-switcher {
+    display: block !important;
+    position: relative !important;
+}
+
+.brutal-color-options {
+    position: absolute !important;
+    bottom: 56px !important;
+    right: 0 !important;
+    display: none !important;
+    flex-direction: column-reverse !important;
+    gap: 0.5rem !important;
+    background: var(--brutal-bg) !important;
+    border: 2px solid var(--brutal-border) !important;
+    padding: 0.75rem !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+.theme-switcher.active .brutal-color-options {
+    display: flex !important;
+}
+
+.brutal-color-swatch {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    flex: 0 0 36px !important;
+    display: block !important;
+    border: 2px solid var(--brutal-border) !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    transition: var(--brutal-transition) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.brutal-color-swatch::after {
+    display: none !important;
+}
+
+.brutal-color-swatch:hover {
+    transform: scale(1.15) !important;
+    border-color: var(--brutal-fg) !important;
+}
+
+.brutal-color-swatch.selected {
+    border: 3px solid var(--brutal-fg) !important;
+    box-shadow: 0 0 0 2px var(--brutal-bg), 0 0 0 4px var(--brutal-fg) !important;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle.brutal-btn {
+    background: var(--brutal-bg) !important;
+    color: var(--brutal-fg) !important;
+}
+
+.dark-mode-toggle.brutal-btn.active {
+    background: var(--brutal-fg) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-fg) !important;
+}
+
+/* ====================================================
+   MOBILE MENU
+   ==================================================== */
+.mobile-menu-btn {
+    background: transparent !important;
+    border: 2px solid var(--brutal-border) !important;
+    color: var(--brutal-fg) !important;
+    font-size: 1.2rem !important;
+}
+
+.mobile-menu-btn:hover {
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+/* ====================================================
+   LIGHT / DAY THEME
+   ==================================================== */
+[data-theme="light"] body,
+[data-theme="light"] .section,
+[data-theme="light"] .split-grid-container,
+[data-theme="light"] .split-grid-left,
+[data-theme="light"] .split-grid-right,
+[data-theme="light"] .home-dark-section,
+[data-theme="light"] .about-section,
+[data-theme="light"] .contact-section-wrapper {
+    background: #f5f5f0 !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .section-title {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .split-grid-left {
+    border-right-color: #0a0a0a !important;
+}
+
+/* Light Nav */
+[data-theme="light"] .top-nav {
+    background: #f5f5f0 !important;
+    border-bottom-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .top-nav.scrolled {
+    background: #f5f5f0 !important;
+}
+
+[data-theme="light"] .nav-text {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .nav-links a:hover .nav-text {
+    color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .nav-links a.active {
+    background: var(--brutal-accent) !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .nav-links a.active .nav-text {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .logo img {
+    filter: none !important;
+}
+
+/* Light Home */
+[data-theme="light"] .home-profile-card {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .home-title-dark {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .home-profile-image-container {
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .profile-social-link {
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .profile-social-link:hover {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 4px 4px 0px #0a0a0a !important;
+}
+
+[data-theme="light"] .home-talk-btn {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 4px 4px 0px #0a0a0a !important;
+}
+
+[data-theme="light"] .home-talk-btn:hover {
+    box-shadow: 6px 6px 0px #0a0a0a !important;
+}
+
+/* Light About */
+[data-theme="light"] .about-tagline {
+    color: var(--brutal-accent) !important;
+    border-left-color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .about-heading {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .about-stat-card {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .about-stat-card:hover {
+    box-shadow: 6px 6px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .about-stat-number {
+    color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .about-stat-label {
+    color: #0a0a0a !important;
+}
+
+/* Light Skills */
+[data-theme="light"] .skills-tabs {
+    border-bottom-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .skill-tab {
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .skill-tab:hover {
+    color: #0a0a0a !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .skill-tab.active {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .skill-card {
+    background: #ffffff !important;
+    border: 2px solid #0a0a0a !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .skill-card:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0px var(--brutal-accent) !important;
+}
+
+
+[data-theme="light"] .skill-card-title {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .skill-card-icon {
+    border-color: #0a0a0a !important;
+    background: #f5f5f0 !important;
+    box-shadow: none !important;
+}
+
+[data-theme="light"] .skill-card:hover .skill-card-icon {
+    box-shadow: none !important;
+}
+
+[data-theme="light"] .skill-card-icon img {
+    filter: none !important;
+}
+
+[data-theme="light"] .skill-card-exp {
+    color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .certified-badge {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .certification-info {
+    color: #0a0a0a !important;
+    border-top-color: #0a0a0a !important;
+}
+
+/* Light Experience */
+[data-theme="light"] .timeline-card {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    border-left-color: var(--brutal-accent) !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .timeline-card:hover {
+    box-shadow: 6px 6px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .timeline-header h3 {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .timeline-date {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .timeline-content h4 {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .client-badge {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .timeline-details li,
+[data-theme="light"] .nested-details li,
+[data-theme="light"] .timeline-content p {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .location {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .exp-project h5 {
+    color: #000000 !important;
+}
+
+/* Light Projects */
+[data-theme="light"] .project-card {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .project-card:hover {
+    box-shadow: 7px 7px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .project-card h3 {
+    color: #0a0a0a !important;
+    border-bottom-color: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .project-card p {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .tech-tag {
+    border-color: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .project-link {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+    border-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .project-link:hover {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+/* Light Contact */
+[data-theme="light"] .contact-container {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .form-group label {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: #f5f5f0 !important;
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 0 0 0 2px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .submit-btn {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 4px 4px 0px #0a0a0a !important;
+}
+
+[data-theme="light"] .submit-btn:hover {
+    box-shadow: 6px 6px 0px #0a0a0a !important;
+}
+
+[data-theme="light"] .char-count {
+    color: #0a0a0a !important;
+}
+
+/* Light Footer */
+[data-theme="light"] .footer {
+    background: #f5f5f0 !important;
+    border-top-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .copyright p {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .footer-social a {
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .footer-social a:hover {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+/* Light Section Separators */
+[data-theme="light"] .split-grid-right section {
+    border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar {
+    background: #f5f5f0 !important;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: var(--brutal-accent) !important;
+    border-color: #f5f5f0 !important;
+}
+
+/* Light Theme Controls */
+[data-theme="light"] .brutal-btn {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+    box-shadow: 3px 3px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .brutal-btn:hover {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+    box-shadow: 5px 5px 0px #0a0a0a !important;
+}
+
+[data-theme="light"] .brutal-color-options {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .brutal-color-swatch {
+    border-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .dark-mode-toggle.brutal-btn.active {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+    border-color: #0a0a0a !important;
+}
+
+/* Light Mobile Menu */
+[data-theme="light"] .mobile-menu-btn {
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .mobile-menu-btn:hover {
+    background: var(--brutal-accent) !important;
+    color: #0a0a0a !important;
+    border-color: var(--brutal-accent) !important;
+}
+
+/* ====================================================
+   PROJECTS MODAL & SEE MORE
+   ==================================================== */
+.see-more-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    background: var(--brutal-bg) !important;
+    border: 3px dashed var(--brutal-border) !important;
+}
+
+.see-more-card:hover {
+    background: var(--brutal-accent) !important;
+    border-style: solid !important;
+}
+
+.see-more-card:hover h3,
+.see-more-card:hover i {
+    color: var(--brutal-bg) !important;
+}
+
+.see-more-icon {
+    font-size: 2rem !important;
+    margin-top: 1rem !important;
+    transition: var(--brutal-transition) !important;
+}
+
+.see-more-card:hover .see-more-icon {
+    transform: translateX(10px) !important;
+}
+
+.brutal-modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px) !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 2rem !important;
+}
+
+.brutal-modal-content {
+    background: var(--brutal-card-bg) !important;
+    border: var(--brutal-border-width) solid var(--brutal-border) !important;
+    box-shadow: 10px 10px 0px var(--brutal-accent) !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    max-height: 85vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+}
+
+.brutal-modal-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.5rem 2rem !important;
+    border-bottom: var(--brutal-border-width) solid var(--brutal-border) !important;
+    background: var(--brutal-bg) !important;
+}
+
+.brutal-modal-header h2 {
+    margin: 0 !important;
+    color: var(--brutal-fg) !important;
+}
+
+.brutal-close-btn {
+    background: transparent !important;
+    border: 2px solid var(--brutal-border) !important;
+    color: var(--brutal-fg) !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 1.2rem !important;
+    cursor: pointer !important;
+    transition: var(--brutal-transition) !important;
+}
+
+.brutal-close-btn:hover {
+    background: var(--brutal-danger) !important;
+    color: #fff !important;
+    border-color: var(--brutal-danger) !important;
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 4px 4px 0px var(--brutal-fg) !important;
+}
+
+.brutal-modal-body {
+    padding: 2rem !important;
+    overflow-y: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+}
+
+.modal-project-item {
+    border: 2px solid var(--brutal-border) !important;
+    padding: 1.5rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+    background: var(--brutal-bg) !important;
+}
+
+@media (max-width: 768px) {
+    .modal-project-item {
+        flex-direction: column !important;
+    }
+}
+
+.modal-project-info h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+    color: var(--brutal-accent) !important;
+}
+
+.modal-project-info p {
+    margin-bottom: 1rem !important;
+}
+
+.modal-github-link {
+    white-space: nowrap !important;
+    margin-top: 0 !important;
+}
+
+[data-theme="light"] .see-more-card {
+    background: #f5f5f0 !important;
+    border-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .see-more-card:hover {
+    background: var(--brutal-accent) !important;
+}
+
+[data-theme="light"] .see-more-card:hover h3,
+[data-theme="light"] .see-more-card:hover i {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .brutal-modal-content {
+    background: #f5f5f0 !important;
+    border-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .brutal-modal-header {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+}
+
+[data-theme="light"] .brutal-modal-header h2 {
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .brutal-close-btn {
+    border-color: #0a0a0a !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme="light"] .brutal-close-btn:hover {
+    background: var(--brutal-danger) !important;
+    color: #ffffff !important;
+    box-shadow: 4px 4px 0px #0a0a0a !important;
+}
+
+[data-theme="light"] .modal-project-item {
+    background: #ffffff !important;
+    border-color: #0a0a0a !important;
+}
+
+/* Experience Project Button & Modal */
+.exp-project-btn {
+    margin-top: 1rem !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+    width: fit-content !important;
+}
+
+.exp-modal-body {
+    padding: 2.5rem !important;
+}
+
+.exp-modal-details {
+    list-style-type: square !important;
+    padding-left: 2rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+}
+
+.exp-modal-details li {
+    font-size: 1.35rem !important; /* BIG FONTS as requested */
+    line-height: 1.6 !important;
+    color: var(--brutal-fg) !important;
+}
+
+[data-theme="light"] .exp-modal-details li {
+    color: #0a0a0a !important;
+}
+

@@ -1,10 +1,44 @@
 {
     "name": "Krishna Patel",
-    "titles": ["a Web Developer", "a Software Developer", "an Application Developer"],
-    "email": "ikrishnapatel@gmail.com",
-    "phone": "+91 877-022-5685",
-    "social": {
-        "linkedin": "https://linkedin.com/in/yourusername",
-        "github": "https://github.com/yourusername"
-    }
+    "taglinePrefix": "I'M ",
+    "titles": [
+        "Backend Engineer",
+        "Cloud Engineer",
+        "AI Engineer"
+    ],
+    "description": "Creating intuitive and functional interfaces, architecting robust backend systems, and integrating AI to elevate product quality.",
+    "stats": [
+        {
+            "value": "2.8+",
+            "label": "Years of Experience"
+        },
+        {
+            "value": "4+",
+            "label": "Completed Projects"
+        }
+    ],
+    "contact": {
+        "emailjsPublicKey": "CG2RVtLOfKNQzt-rK",
+        "emailjsServiceId": "service_wshcdnb",
+        "emailjsTemplateId": "template_c6cbeog",
+        "toName": "Krishna Patel"
+    },
+    "socialLinks": [
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/ikrishnapatel",
+            "iconClass": "fab fa-github"
+        },
+        {
+            "platform": "LinkedIn",
+            "url": "https://linkedin.com/in/ikrishnapatel",
+            "iconClass": "fab fa-linkedin"
+        },
+        {
+            "platform": "LeetCode",
+            "url": "https://leetcode.com/ikrishnapatel",
+            "isSvg": true,
+            "svgPath": "M16.102 17.93l-2.697 2.607c-.466.451-1.211.451-1.677 0l-4.51-4.36c-.467-.451-.467-1.18 0-1.631l9.904-9.57c.466-.451 1.211-.451 1.677 0l2.697 2.607c.466.451.466 1.18 0 1.631l-5.394 5.215 5.394 5.216c.466.45.466 1.18 0 1.631zm-9.983-5.32c-.466-.451-.466-1.18 0-1.631l9.904-9.57c.466-.451 1.211-.451 1.677 0l.788.762c.466.451.466 1.18 0 1.631l-9.026 8.724 9.026 8.724c.466.451.466 1.18 0 1.631l-.788.762c-.466.451-1.211.451-1.677 0l-9.904-9.57zM3.486 10.98c-.466-.451-.466-1.18 0-1.631l.788-.762c.466-.451 1.211-.451 1.677 0l9.904 9.57c.467.451.467 1.18 0 1.631l-.788.762c-.466.451-1.211.451-1.677 0l-9.904-9.57z"
+        }
+    ]
 }

@@ -7,7 +7,19 @@
             "technologies": ["HTML5", "CSS3", "JavaScript"]
         },
         {
-            "title": "Project 2",
+            "title": "Zenkins Pipeline",
+            "description": "Description of project 2 goes here. This is a brief overview of what the project does.",
+            "link": "#",
+            "technologies": ["React", "Node.js"]
+        },
+        {
+            "title": "Project 3",
+            "description": "Description of project 3 goes here. This is a brief overview of what the project does.",
+            "link": "#",
+            "technologies": ["Java", "Spring Boot"]
+        },
+        {
+            "title": "Zenkins Pipeline",
             "description": "Description of project 2 goes here. This is a brief overview of what the project does.",
             "link": "#",
             "technologies": ["React", "Node.js"]
@@ -18,5 +30,6 @@
             "link": "#",
             "technologies": ["Java", "Spring Boot"]
         }
+        
     ]
 }

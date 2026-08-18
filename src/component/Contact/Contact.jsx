@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
-import './Contact.css';
+
+
+import profileData from '../../../data/profile.json';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +17,9 @@ const Contact = () => {
   const [charCount, setCharCount] = useState(0);
 
   useEffect(() => {
-    emailjs.init('CG2RVtLOfKNQzt-rK');
+    if (profileData.contact?.emailjsPublicKey) {
+      emailjs.init(profileData.contact.emailjsPublicKey);
+    }
   }, []);
 
   const handleInputChange = (e) => {
@@ -72,7 +76,7 @@ const Contact = () => {
 
     try {
       const templateParams = {
-        to_name: 'Krishna Patel',
+        to_name: profileData.contact?.toName || profileData.name,
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -81,8 +85,8 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'service_wshcdnb',
-        'template_c6cbeog',
+        profileData.contact?.emailjsServiceId,
+        profileData.contact?.emailjsTemplateId,
         templateParams
       );
 
@@ -107,36 +111,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section contact-section-wrapper">
       <div className="section-content">
         <h2 className="section-title">Contact Me</h2>
         
         <div className="contact-container">
-          <div className="contact-info">
-            <div className="contact-item">
-              <i className="fas fa-envelope"></i>
-              <span>Email: </span>
-              <a href="mailto:ikrishnapatel@gmail.com" className="contact-link">
-                ikrishnapatel@gmail.com
-              </a>
-            </div>
-            <div className="contact-item">
-              <i className="fas fa-phone"></i>
-              <span>Phone: </span>
-              <a href="tel:+91 877-022-5685" className="contact-link">
-                +91 877-022-5685
-              </a>
-            </div>
-            <div className="contact-social">
-              <a href="#" className="social-link" title="LinkedIn">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="#" className="social-link" title="GitHub">
-                <i className="fab fa-github"></i>
-              </a>
-            </div>
-          </div>
-
           <motion.form
             className="contact-form"
             onSubmit={handleSubmit}

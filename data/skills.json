@@ -35,20 +35,20 @@
         {
             "name": "Java",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            "experience": "2 years",
+            "experience": "3 years",
             "certified": true,
             "certificationName": "HackerRank Java Certification"
         },
         {
             "name": "Spring",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-            "experience": "1.5 years",
+            "experience": "3 years",
             "certified": false
         },
         {
             "name": "Node.js",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            "experience": "1 year",
+            "experience": "2 year",
             "certified": false
         },
         {
@@ -63,7 +63,7 @@
         {
             "name": "AWS",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-            "experience": "1.5 years",
+            "experience": "2.5 years",
             "certified": true,
             "certificationName": "AWS Certified Cloud Practitioner"
         },
@@ -77,7 +77,7 @@
         {
             "name": "GCP",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            "experience": "6 months",
+            "experience": "8 months",
             "certified": false
         }
     ],
@@ -85,20 +85,20 @@
         {
             "name": "Jenkins",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
-            "experience": "1.5 years",
+            "experience": "1 years",
             "certified": false
         },
         {
             "name": "GitHub",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-            "experience": "1 year",
+            "experience": "3 year",
             "certified": true,
             "certificationName": "GitHub Foundation & Copilot"
         },
         {
             "name": "Docker",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            "experience": "1 year",
+            "experience": "2 year",
             "certified": false
         }
     ]

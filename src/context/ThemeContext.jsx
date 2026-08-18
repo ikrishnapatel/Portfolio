@@ -11,22 +11,28 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [primaryColor, setPrimaryColor] = useState('#ec4899');
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [primaryColor, setPrimaryColor] = useState('#00FF41');
 
   useEffect(() => {
     // Load saved preferences from localStorage
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    const savedColor = localStorage.getItem('primaryColor') || '#ec4899';
+    const savedDarkMode = localStorage.getItem('darkMode');
+    const savedColor = localStorage.getItem('primaryColor') || '#00FF41';
     
-    setIsDarkMode(savedDarkMode);
+    // Default to dark mode if no preference saved
+    const darkMode = savedDarkMode === null ? true : savedDarkMode === 'true';
+    
+    setIsDarkMode(darkMode);
     setPrimaryColor(savedColor);
     
     // Apply theme to document
-    if (savedDarkMode) {
+    if (darkMode) {
       document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
     }
     document.documentElement.style.setProperty('--primary-color', savedColor);
+    document.documentElement.style.setProperty('--brutal-accent', savedColor);
   }, []);
 
   const toggleDarkMode = () => {
@@ -36,7 +42,7 @@ export const ThemeProvider = ({ children }) => {
     if (newDarkMode) {
       document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.removeAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
     
     localStorage.setItem('darkMode', newDarkMode.toString());
@@ -45,6 +51,7 @@ export const ThemeProvider = ({ children }) => {
   const changePrimaryColor = (color) => {
     setPrimaryColor(color);
     document.documentElement.style.setProperty('--primary-color', color);
+    document.documentElement.style.setProperty('--brutal-accent', color);
     localStorage.setItem('primaryColor', color);
   };
 
