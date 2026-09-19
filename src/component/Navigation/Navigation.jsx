@@ -10,6 +10,7 @@ const Navigation = () => {
     { id: 'about', iconInactive: 'far fa-user', iconActive: 'fas fa-user', text: 'About' },
     { id: 'skills', iconInactive: 'far fa-keyboard', iconActive: 'fas fa-code', text: 'Skills' },
     { id: 'experience', iconInactive: 'far fa-folder', iconActive: 'fas fa-briefcase', text: 'Experience' },
+    { id: 'badges', iconInactive: 'far fa-id-badge', iconActive: 'fas fa-certificate', text: 'Badges' },
     { id: 'projects', iconInactive: 'far fa-lightbulb', iconActive: 'fas fa-project-diagram', text: 'Projects' },
     { id: 'contact', iconInactive: 'far fa-envelope', iconActive: 'fas fa-paper-plane', text: 'Contact' }
   ];

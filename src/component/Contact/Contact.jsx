@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from 'emailjs-com';
 
 
 import profileData from '../../../data/profile.json';
@@ -15,12 +14,7 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [charCount, setCharCount] = useState(0);
-
-  useEffect(() => {
-    if (profileData.contact?.emailjsPublicKey) {
-      emailjs.init(profileData.contact.emailjsPublicKey);
-    }
-  }, []);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -45,19 +39,21 @@ const Contact = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name.match(/^[a-zA-Z\s]{2,50}$/)) {
-      newErrors.name = 'Please enter a valid name (2-50 characters, letters only)';
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      newErrors.name = 'Please enter your name (at least 2 characters)';
     }
 
     if (!formData.email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
       newErrors.email = 'Please enter a valid email address';
     }
 
-    if (!formData.phone.match(/^\+?[1-9][0-9]{7,14}$/)) {
+    // Strip non-digits and check length (accepts +91, 0XX, spaces, dashes, brackets)
+    const phoneDigits = formData.phone.replace(/\D/g, '');
+    if (phoneDigits.length < 7 || phoneDigits.length > 15) {
       newErrors.phone = 'Please enter a valid phone number';
     }
 
-    if (formData.message.length < 10) {
+    if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long';
     }
 
@@ -67,44 +63,44 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setSubmitStatus(null);
+
     if (!validateForm()) {
+      console.log('Form validation failed. Please check the error messages under form fields.');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        to_name: profileData.contact?.toName || profileData.name,
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-        reply: formData.email
-      };
-
-      await emailjs.send(
-        profileData.contact?.emailjsServiceId,
-        profileData.contact?.emailjsTemplateId,
-        templateParams
-      );
-
-      // Show success message
-      alert('Message sent successfully!');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          to_name: profileData.contact?.toName || profileData.name
+        }),
       });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send email');
+      }
+
+      setSubmitStatus('success');
+
+      // Reset form
+      setFormData({ name: '', email: '', phone: '', message: '' });
       setCharCount(0);
 
     } catch (error) {
       console.error('Failed to send email:', error);
-      alert('Failed to send message. Please try again.');
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -186,6 +182,18 @@ const Contact = () => {
               </div>
             </div>
 
+            {submitStatus === 'success' && (
+              <div className="form-status form-status-success">
+                <i className="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="form-status form-status-error">
+                <i className="fas fa-exclamation-triangle"></i> Failed to send message. Please try again or email me directly.
+              </div>
+            )}
+
             <div className="form-group">
               <button
                 type="submit"
@@ -212,4 +220,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

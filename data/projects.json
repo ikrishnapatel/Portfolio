@@ -2,34 +2,10 @@
     "projects": [
         {
             "title": "Portfolio Website",
-            "description": "A modern, responsive portfolio website built with HTML, CSS, and JavaScript featuring dark mode, theme customization, and animations.",
-            "link": "https://github.com/yourusername/portfolio",
-            "technologies": ["HTML5", "CSS3", "JavaScript"]
-        },
-        {
-            "title": "Zenkins Pipeline",
-            "description": "Description of project 2 goes here. This is a brief overview of what the project does.",
-            "link": "#",
-            "technologies": ["React", "Node.js"]
-        },
-        {
-            "title": "Project 3",
-            "description": "Description of project 3 goes here. This is a brief overview of what the project does.",
-            "link": "#",
-            "technologies": ["Java", "Spring Boot"]
-        },
-        {
-            "title": "Zenkins Pipeline",
-            "description": "Description of project 2 goes here. This is a brief overview of what the project does.",
-            "link": "#",
-            "technologies": ["React", "Node.js"]
-        },
-        {
-            "title": "Project 3",
-            "description": "Description of project 3 goes here. This is a brief overview of what the project does.",
-            "link": "#",
-            "technologies": ["Java", "Spring Boot"]
+            "description": "A brutalist-themed personal portfolio built with React + Vite featuring dark/light mode, dynamic theme color switching, smooth scroll navigation, animated timeline, Credly badge carousel, Framer Motion animations, and a responsive multi-section layout showcasing experience, skills, projects, and certifications.",
+            "link": "https://github.com/ikrishnapatel/Portfolio",
+            "technologies": ["React", "Vite", "JavaScript", "CSS3", "Framer Motion", "HTML5"]
         }
-        
     ]
 }
+

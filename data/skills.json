@@ -63,21 +63,21 @@
         {
             "name": "AWS",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-            "experience": "2.5 years",
+            "experience": "3 years",
             "certified": true,
             "certificationName": "AWS Certified Cloud Practitioner"
         },
         {
             "name": "AWS AI",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-            "experience": "1 year",
+            "experience": "6 Months",
             "certified": true,
             "certificationName": "AWS Certified AI Practitioner"
         },
         {
             "name": "GCP",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            "experience": "8 months",
+            "experience": "1 year",
             "certified": false
         }
     ],

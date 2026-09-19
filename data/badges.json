@@ -1,0 +1,39 @@
+{
+  "badges": [
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/aws-certified-cloud-practitioner.png",
+      "title": "AWS Certified Cloud Practitioner",
+      "link": "https://www.credly.com/badges/b3ac5326-1ef9-49e4-935d-c561fcc40fef"
+    },
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/github-foundations.png",
+      "title": "GitHub Foundations",
+      "link": "https://www.credly.com/badges/f366f9b8-1463-4925-a042-0438367aa156"
+    },
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/accelerate-development-with-antigravity.png",
+      "title": "Accelerate Development with Antigravity",
+      "link": "https://www.credly.com/badges/856b01aa-999e-43fe-a981-f17a3003e4a8"
+    },
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/certified-partner-specialist-gemini-enterprise-agen.png",
+      "title": "Certified Partner Specialist: Gemini Enterprise Agent Development",
+      "link": "https://www.credly.com/badges/d73f0852-5099-42f8-804f-87e04d605a54"
+    },
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/GeminiAgent.png",
+      "title": "Deploy an Agent with Agent Development Kit (ADK)",
+      "link": "https://www.credly.com/badges/c35b7e78-0d12-4974-994d-dfe1bdb36aab"
+    },
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/evaluate-and-improve-agent-development-kit-agents.png",
+      "title": "Evaluate and Improve Agent Development Kit Agents",
+      "link": "https://www.credly.com/badges/776e3be5-ac88-4a8a-9d28-00368895149a"
+    },
+    {
+      "image": "https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/implement-cloud-storage-and-data-protection-solutio.png",
+      "title": "Implement Cloud Storage and Data Protection Solutions",
+      "link": "https://www.credly.com/badges/33389f30-77de-4b9a-aba5-c16f4c5d32d5"
+    }
+  ]
+}

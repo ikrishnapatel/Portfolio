@@ -101,17 +101,6 @@ The app can be deployed to any static hosting service:
 - **Vercel**: Connect your GitHub repository
 - **GitHub Pages**: Use `gh-pages` package
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Contact
-
-Krishna Patel - ikrishnapatel01@gmail.com
-
-Project Link: [https://github.com/ikrishnapatel01/portfolio-react](https://github.com/yourusername/portfolio-react)
-```
-
 ## How to Set Up and Run
 
 1. **Create the project structure** as shown above

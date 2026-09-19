@@ -672,6 +672,32 @@ p, span, a, li, label, input, textarea, button {
     font-size: 0.8rem !important;
 }
 
+.form-status {
+    padding: 0.9rem 1.2rem !important;
+    font-family: var(--brutal-font) !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    border: 2px solid !important;
+}
+
+.form-status-success {
+    background: rgba(0, 255, 65, 0.1) !important;
+    border-color: var(--brutal-accent) !important;
+    color: var(--brutal-accent) !important;
+}
+
+.form-status-error {
+    background: rgba(255, 51, 51, 0.1) !important;
+    border-color: var(--brutal-danger) !important;
+    color: var(--brutal-danger) !important;
+}
+
 .submit-btn {
     background: var(--brutal-accent) !important;
     color: var(--brutal-bg) !important;
@@ -1445,8 +1471,6 @@ p, span, a, li, label, input, textarea, button {
 .modal-project-item {
     border: 2px solid var(--brutal-border) !important;
     padding: 1.5rem !important;
-    display: flex !important;
-    justify-content: space-between !important;
     align-items: flex-start !important;
     gap: 2rem !important;
     background: var(--brutal-bg) !important;
@@ -1462,15 +1486,22 @@ p, span, a, li, label, input, textarea, button {
     margin-top: 0 !important;
     margin-bottom: 0.5rem !important;
     color: var(--brutal-accent) !important;
+    text-align: left !important;
 }
 
 .modal-project-info p {
     margin-bottom: 1rem !important;
+    text-align: justify !important;
 }
 
 .modal-github-link {
     white-space: nowrap !important;
     margin-top: 0 !important;
+}
+
+.modal-github-link-wrapper {
+    display: flex !important;
+    margin-top: 1rem !important;
 }
 
 [data-theme="light"] .see-more-card {
@@ -1546,5 +1577,115 @@ p, span, a, li, label, input, textarea, button {
 
 [data-theme="light"] .exp-modal-details li {
     color: #0a0a0a !important;
+}
+
+/* ====================================================
+   BADGES / CERTIFICATIONS - INFINITE TICKER
+   ==================================================== */
+.badges-section {
+    overflow: hidden !important;
+}
+
+/* Reset font overrides inside badges so Credly text renders correctly */
+.badges-section .badges-ticker *,
+.badges-section .badges-ticker p,
+.badges-section .badges-ticker span,
+.badges-section .badges-ticker a,
+.badges-section .badges-ticker div {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-weight: normal !important;
+}
+
+.badges-ticker-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-top: var(--brutal-border-width) solid var(--brutal-accent);
+    border-bottom: var(--brutal-border-width) solid var(--brutal-accent);
+}
+
+/* Gradient fade masks on left and right edges */
+.badges-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.badges-fade-left {
+    left: 0;
+    background: linear-gradient(to right, var(--brutal-bg) 0%, transparent 100%);
+}
+
+.badges-fade-right {
+    right: 0;
+    background: linear-gradient(to left, var(--brutal-bg) 0%, transparent 100%);
+}
+
+.badges-ticker {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.badges-track {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    animation: badges-scroll 35s linear infinite;
+    will-change: transform;
+}
+
+.badges-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes badges-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exactly half (the original 7 badges worth) for seamless loop */
+        transform: translateX(-50%);
+    }
+}
+
+.badge-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.badge-item img {
+    width: 150px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.badge-item:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+    z-index: 5;
+}
+
+[data-theme="light"] .badges-fade-left {
+    background: linear-gradient(to right, var(--brutal-bg, #ffffff) 0%, transparent 100%) !important;
+}
+
+[data-theme="light"] .badges-fade-right {
+    background: linear-gradient(to left, var(--brutal-bg, #ffffff) 0%, transparent 100%) !important;
 }
 

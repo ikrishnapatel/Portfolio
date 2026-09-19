@@ -51,13 +51,7 @@ const Skills = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
-                  {skill.certified && (
-                    <div className="certified-badge">
-                      <i className="fas fa-certificate"></i>
-                      <span>Certified</span>
-                    </div>
-                  )}
-                  
+
                   <div className="skill-card-icon">
                     <img src={skill.icon} alt={skill.name} />
                   </div>
@@ -69,11 +63,7 @@ const Skills = () => {
                     <span>{skill.experience}</span>
                   </div>
                   
-                  {skill.certified && skill.certificationName && (
-                    <div className="certification-info">
-                      {skill.certificationName}
-                    </div>
-                  )}
+
                 </motion.div>
               ))}
             </motion.div>

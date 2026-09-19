@@ -85,9 +85,11 @@ const Projects = () => {
               </div>
             </div>
             {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link modal-github-link">
-                <i className="fab fa-github"></i> GitHub
-              </a>
+              <div className="modal-github-link-wrapper">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link modal-github-link">
+                  <i className="fab fa-github"></i> GitHub
+                </a>
+              </div>
             )}
           </div>
         ))}

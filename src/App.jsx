@@ -6,6 +6,7 @@ import Navigation from './component/Navigation/Navigation';
 import About from './component/About/About';
 import Skills from './component/Skills/Skills';
 import Experience from './component/Experience/Experience';
+import Badges from './component/Badges/Badges';
 import Projects from './component/Projects/Projects';
 import Contact from './component/Contact/Contact';
 import ThemeControls from './component/ThemeControls/ThemeControls';
@@ -21,6 +22,7 @@ function App() {
           <About />
           <Skills />
           <Experience />
+          <Badges />
           <Projects />
           <Contact />
         </main>
