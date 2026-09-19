@@ -1,4 +1,4 @@
-# Krishna Patel Portfolio - React Version
+# Portfolio
 
 A modern, responsive portfolio website built with React.js, featuring interactive skills display, animated backgrounds, and a contact form.
 
@@ -43,7 +43,7 @@ npm install
 
 3. Start the development server:
 ```bash
-npm start
+npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -58,6 +58,8 @@ npm run build
 
 ```
 portfolio-react/
+├── api/
+│   └── sendEmail.js
 ├── public/
 │   ├── index.html
 │   ├── kp_logo.png
@@ -90,16 +92,34 @@ Update the color options in `ThemeControls.js` and CSS variables in `index.css`.
 ### Adding Skills
 Modify the `skillsData` object in `Skills.js` to add or modify skills.
 
-### Contact Form
-Update EmailJS configuration in `Contact.js` with your service and template IDs.
+### Contact Form (EmailJS)
+
+This project uses EmailJS for the contact form, secured via a Vercel serverless function (`api/sendEmail.js`).
+To connect your EmailJS account, you need to configure the following environment variables in your deployment environment (or in a `.env.local` file for local development):
+
+- `emailjsServiceId`: Your EmailJS Service ID
+- `emailjsTemplateId`: Your EmailJS Template ID
+- `emailjsPublicKey`: Your EmailJS Public Key
+- `emailjsPrivateKey`: Your EmailJS Private Key (Required for server-side security)
 
 ## Deployment
 
-The app can be deployed to any static hosting service:
+### Vercel (Recommended)
 
-- **Netlify**: Drag and drop the `build` folder
-- **Vercel**: Connect your GitHub repository
-- **GitHub Pages**: Use `gh-pages` package
+This project is optimized for deployment on **Vercel**, as it utilizes Vercel Serverless Functions (`api/sendEmail.js`) to securely process EmailJS contact form submissions.
+
+1. Push your code to a GitHub repository.
+2. Import the project into Vercel.
+3. In the Vercel dashboard, go to **Settings > Environment Variables** and add your EmailJS credentials:
+   - `emailjsServiceId`
+   - `emailjsTemplateId`
+   - `emailjsPublicKey`
+   - `emailjsPrivateKey`
+4. Deploy!
+
+### Other Static Hosting
+
+If you deploy to a purely static host (like GitHub Pages), the Vercel serverless function for sending emails will not work. You would need to either use a different backend solution or refactor the contact form to call EmailJS directly from the frontend (which exposes your keys).
 
 ## How to Set Up and Run
 
@@ -109,10 +129,10 @@ The app can be deployed to any static hosting service:
    npm install
    ```
 3. **Copy your logo** (`kp_logo.png`) to the `public` folder
-4. **Update EmailJS configuration** in `Contact.js` with your actual service and template IDs
+4. **Create a `.env.local` file** and add your EmailJS environment variables (see Contact Form section)
 5. **Start the development server**:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Key Benefits of the React Version
