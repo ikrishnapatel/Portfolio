@@ -5,61 +5,49 @@
             "company": "Cognizant",
             "client": "The Hartford",
             "location": "Pune, India",
-            "dateRange": "April 2025 - Present",
-            "description": "Promoted to Software Engineer, leading security-focused development initiatives for enterprise applications.",
-            "projects": [
-                {
-                    "name": "Agentic AI PII Detection Platform",
-                    "details": [
-                        "Engineered optimized Splunk queries with index-level filtering to analyze 1M+ logs, extracting potential PII values across multiple data types (SSN, emails, credit cards, etc.) with high recall.",
-                        "Built an event-driven pipeline using webhooks to stream extracted findings to a gateway, where Google Vertex AI (Gemini) agents classified each detection as true or false positive — drastically reducing noise.",
-                        "Automated end-to-end incident creation in ServiceNow, dynamically routing alerts based on detection source and PII type — reducing mean-time-to-detection from hours to seconds and enabling fully hands-off triage."
-                    ]
-                },
-                {
-                    "name": "Organization-Wide IDE Security Plugins",
-                    "details": [
-                        "Developed and deployed custom VS Code and Eclipse security extensions org-wide, embedding shift-left secret detection directly into developer workflows across 100+ engineers.",
-                        "Implemented highly optimized regex-based scanning engines with pattern libraries for 300+ secret types (AWS keys, API tokens, passwords, certificates, private keys, etc.) that flag secrets locally before code commits.",
-                        "Built real-time inline diagnostics with severity indicators and one-click remediation suggestions, reducing developer friction while preventing credential leakage at the source.",
-                        "Implemented real-time warning pop-ups triggered on file save when secrets are detected, surfacing issues in the Problems console and blocking commits until all findings are resolved."
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Junior Software Engineer",
-            "company": "Cognizant",
-            "client": "The Hartford",
-            "location": "Pune, India",
-            "dateRange": "September 2023 - March 2025",
+            "dateRange": "September 2023 - Current",
             "description": "Worked as a Full Stack Developer on enterprise security solutions in the Insurance Domain.",
             "projects": [
                 {
-                    "name": "Full-Stack Vulnerability Dashboard",
+                    "name": "Enterprise API Security Dashboard",
                     "details": [
-                        "Delivered a production-grade security dashboard in 6 months, giving leadership centralized, real-time visibility into the organization's vulnerability posture across all applications.",
-                        "Architected scalable Java Spring Boot backend services with layered architecture, implementing RESTful endpoints that consumed Python Powertool APIs and GraphQL to fetch, aggregate, and normalize vulnerability metrics from the Traceable platform.",
-                        "Designed efficient data aggregation pipelines to consolidate thousands of security findings into a single source of truth, enabling leadership to track remediation progress and prioritize critical vulnerabilities.",
-                        "Built interactive Power BI dashboards with drill-down capabilities, visualizing vulnerability trends, severity distributions, and team-wise remediation metrics for executive reporting."
+                        "Built a Java Spring Boot backend for a security dashboard surfacing vulnerability data across 3000+ APIs, replacing a slow manual search process in Traceable AI.",
+                        "Developed 18 FastAPI/GraphQL endpoints to ingest data from Traceable AI and 10 Spring Boot REST APIs to serve it to an Angular dashboard.",
+                        "Architected and optimized PostgreSQL data models and queries, diagnosing performance bottlenecks and reducing query latency by 40%, improving the overall reliability of data processing.",
+                        "Constructed an automated notification system for 3,000+ APIs to alert owners of vulnerabilities in real time, reducing average security response time by over 24 hours.",
+                        "Integrated Checkmarx static scanning into the CI pipeline, automatically catching 50+ security flaws early in the development cycle and ensuring vulnerability-free releases.",
+                        "Containerized the Java and Angular applications with Docker for consistent, portable deployments across environments.",
+                        "Deployed containerized services to AWS ECS with ECR as the container registry, streamlining release management.",
+                        "Provisioned 3 FastAPI services using AWS SAM, reducing infrastructure deployment time by 65% and enabling automated, repeatable setup across Dev, QA, and Prod environments.",
+                        "Validated APIs and workflows using SoapUI and led code reviews with QA and platform teams.",
+                        "Leveraged GitHub Copilot to accelerate development, cutting boilerplate coding time and speeding up feature delivery by ~30%."
+                    ]
+                },
+                {
+                    "name": "PII Detection Agent",
+                    "details": [
+                        "Designed and deployed a PII detection agent in Python on GCP Cloud Run using the Google ADK framework, exposing it via FastAPI and applying object-oriented design principles for a maintainable, extensible codebase.",
+                        "Deployed an AWS Lambda function to process queued logs in a serverless, auto-scaling manner, applying PII detection logic and writing findings to a PostgreSQL database.",
+                        "Architected a scalable, event-driven pipeline to route 50,000+ daily logs from Splunk through Apigee webhooks into an SQS queue for reliable, decoupled ingestion.",
+                        "Consumed logs from SQS and batched up to 400 PII items per agent request, reducing API calls and token usage to optimize latency and cost.",
+                        "Used AWS EventBridge to trigger ServiceNow incident creation with a summarized report of detected PII, closing the loop from detection to response.",
+                        "Engineered structured prompts defining detection rules, expected PII categories, and output format, guiding the agent to accurately identify and classify sensitive data while minimizing false positives.",
+                        "Added structured logging, error handling, and monitoring to ensure reliable, observable processing of high-volume log streams.",
+                        "Documented the end-to-end system architecture using draw.io, aligning stakeholders on data flow and integration points."
                     ]
                 }
             ]
         },
         {
-            "title": "Intern",
+            "title": "Full-Stack Intern",
             "company": "Cognizant",
+            "location": "Pune, India",
             "dateRange": "March 2023 - July 2023",
-            "description": "Successfully completed a 6-month internship program with certification in Full Stack Development.",
-            "details": [
-                "Duration: 6 months",
-                "Training: Full Stack Development"
-            ],
+            "description": "Completed a full-stack development internship, building production-style applications and collaborating in an Agile team environment.",
             "responsibilities": [
-                "Gained hands-on experience in both front-end and back-end technologies",
-                "Worked on real-time assignments and collaborative coding tasks",
-                "Built foundational skills in web development, version control, and deployment",
-                "Received certification upon successful completion of the program"
+                "Built a full-stack Book Store application during training using a Spring Boot backend, MySQL database, and an Angular frontend with search, filter, and cart features.",
+                "Built, integrated, and tested RESTful APIs using Swagger and Postman, covering main user flows with integration tests before handoff.",
+                "Worked in an Agile team of 3, using Git/GitHub for branching, code reviews, and deployments."
             ]
         }
     ]

@@ -107,9 +107,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-Krishna Patel - ikrishnapatel@gmail.com
+Krishna Patel - ikrishnapatel01@gmail.com
 
-Project Link: [https://github.com/yourusername/portfolio-react](https://github.com/yourusername/portfolio-react)
+Project Link: [https://github.com/ikrishnapatel01/portfolio-react](https://github.com/yourusername/portfolio-react)
 ```
 
 ## How to Set Up and Run
