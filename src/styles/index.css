@@ -2510,10 +2510,7 @@ main section:not(#home) {
 /* Red */
 
 @media (max-width: 768px) {
-    .nav-content {
-        padding: 1rem;
-        /* Consistent padding */
-    }
+
 
     .logo-section {
         flex-direction: row;
@@ -2644,7 +2641,7 @@ main section:not(#home) {
     }
 
     [data-theme="dark"] .timeline-card {
-        margin-left: 50px;
+        /* margin-left: 50px; - removed to fix messy layout */
     }
 
     [data-theme="dark"] .timeline-card::before {

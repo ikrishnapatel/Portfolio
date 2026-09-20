@@ -1409,7 +1409,7 @@ p, span, a, li, label, input, textarea, button {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    padding: 2rem !important;
+    padding: 1rem !important;
 }
 
 .brutal-modal-content {
@@ -1461,7 +1461,7 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .brutal-modal-body {
-    padding: 2rem !important;
+    padding: 0.5rem !important;
     overflow-y: auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1556,9 +1556,7 @@ p, span, a, li, label, input, textarea, button {
     width: fit-content !important;
 }
 
-.exp-modal-body {
-    padding: 2.5rem !important;
-}
+
 
 .exp-modal-details {
     list-style-type: square !important;

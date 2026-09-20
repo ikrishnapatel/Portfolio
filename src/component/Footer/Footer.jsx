@@ -7,9 +7,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="copyright">
-          <p>&copy; {currentYear} {profileData.name}. All rights reserved.</p>
-        </div>
         <div className="footer-social">
           {profileData.socialLinks?.map((link, index) => (
             <a 
@@ -28,6 +25,10 @@ const Footer = () => {
               )}
             </a>
           ))}
+        </div>
+        <div className="copyright">
+          <p>&copy; {currentYear} {profileData.name}</p>
+          <p>All rights reserved</p>
         </div>
       </div>
     </footer>
