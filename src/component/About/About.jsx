@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profileData from '../../../data/profile.json';
+import profileImage from '../../../data/krishnapatel2.png';
 
 const About = () => {
   return (
@@ -70,7 +71,7 @@ const About = () => {
       <div className="neo-hero-right">
         <div className="neo-image-container">
           <div className="neo-image-wrapper">
-            <img src="https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/krishnapatel2.png" alt={profileData.name} className="neo-profile-img" />
+            <img src={profileImage} alt={profileData.name} className="neo-profile-img" />
           </div>
           
           {/* Floating Code Snippet */}
