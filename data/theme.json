@@ -1,0 +1,9 @@
+{
+  "colorOptions": [
+    { "color": "rgb(187 255 168)", "title": "Green", "secondaryColor": "#ff70a6" },
+    { "color": "rgb(135 180 255)", "title": "Blue", "secondaryColor": "#0A1128" },
+    { "color": "#f8e390", "title": "Yellow", "secondaryColor": "#4A148C" },
+    { "color": "#f8c39e", "title": "Orange", "secondaryColor": "#4B2E1E" },
+    { "color": "#fc8686", "title": "Red", "secondaryColor": "#660000" }
+  ]
+}

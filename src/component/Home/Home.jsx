@@ -4,7 +4,6 @@ import profileData from '../../../data/profile.json';
 import MetaBalls from '../UI/MetaBalls/MetaBalls';
 import { useTheme } from '../../context/ThemeContext';
 
-
 const Home = () => {
   const { primaryColor } = useTheme();
 
@@ -43,7 +42,7 @@ const Home = () => {
           <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className="home-profile-image-container">
               <img 
-                src="/assets/profile_avatar.png" 
+                src="https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/krishnapatel2.png" 
                 alt={`${profileData.name} Profile`} 
                 className="home-profile-image" 
               />

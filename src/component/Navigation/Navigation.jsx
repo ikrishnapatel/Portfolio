@@ -8,9 +8,9 @@ const Navigation = () => {
   const navItems = [
     { id: 'about', text: 'About' },
     { id: 'skills', text: 'Skills' },
-    { id: 'projects', text: 'Projects' },
     { id: 'experience', text: 'Experience' },
-    { id: 'badges', text: 'Certifications' }
+    { id: 'badges', text: 'Certifications' },
+    { id: 'projects', text: 'Projects' }
   ];
 
   useEffect(() => {

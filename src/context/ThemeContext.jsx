@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import themeData from '../../data/theme.json';
 
 const ThemeContext = createContext();
 
@@ -11,22 +12,30 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [primaryColor, setPrimaryColor] = useState('#3B82F6');
+  const defaultColor = themeData.colorOptions[0].color;
+  const [primaryColor, setPrimaryColor] = useState(defaultColor);
 
   useEffect(() => {
-    const savedColor = localStorage.getItem('primaryColor') || '#3B82F6';
+    const savedColor = localStorage.getItem('primaryColor') || defaultColor;
     setPrimaryColor(savedColor);
     
     // Force light theme
     document.documentElement.setAttribute('data-theme', 'light');
     document.documentElement.style.setProperty('--primary-color', savedColor);
     document.documentElement.style.setProperty('--brutal-accent', savedColor);
+    
+    const option = themeData.colorOptions.find(opt => opt.color === savedColor) || themeData.colorOptions[0];
+    document.documentElement.style.setProperty('--brutal-secondary', option.secondaryColor);
   }, []);
 
   const changePrimaryColor = (color) => {
     setPrimaryColor(color);
     document.documentElement.style.setProperty('--primary-color', color);
     document.documentElement.style.setProperty('--brutal-accent', color);
+    
+    const option = themeData.colorOptions.find(opt => opt.color === color) || themeData.colorOptions[0];
+    document.documentElement.style.setProperty('--brutal-secondary', option.secondaryColor);
+    
     localStorage.setItem('primaryColor', color);
   };
 

@@ -34,6 +34,7 @@
 
 body, html {
     font-family: var(--brutal-font) !important;
+    letter-spacing: 2px !important;
     background-color: var(--brutal-bg) !important;
     background-image: 
         linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
@@ -558,6 +559,8 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .timeline-content p {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
     font-size: 1.1rem !important;
 }
 
@@ -574,7 +577,8 @@ p, span, a, li, label, input, textarea, button {
 .timeline-details li,
 .nested-details li {
     color: var(--brutal-muted) !important;
-    font-family: var(--brutal-font) !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
     font-size: 1.2rem !important;
     line-height: 1.6 !important;
 }
@@ -631,6 +635,8 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .project-card p {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
     color: var(--brutal-muted) !important;
     font-size: 0.9rem !important;
     line-height: 1.6 !important;
@@ -789,7 +795,6 @@ p, span, a, li, label, input, textarea, button {
    ==================================================== */
 .footer {
     background: transparent !important;
-    border-top: var(--brutal-border-width) solid var(--brutal-border) !important;
     width: 100% !important;
 }
 
@@ -1550,6 +1555,8 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .modal-project-info p {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
     margin-bottom: 1rem !important;
     text-align: justify !important;
 }
@@ -1628,6 +1635,8 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .exp-modal-details li {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
     font-size: 1.35rem !important; /* BIG FONTS as requested */
     line-height: 1.6 !important;
     color: var(--brutal-fg) !important;
@@ -1779,10 +1788,10 @@ p, span, a, li, label, input, textarea, button {
 .neo-tag {
     display: inline-block !important;
     background: var(--brutal-accent) !important;
-    color: #ffffff !important;
+    color: #000000 !important;
     padding: 0.4rem 1rem !important;
     font-weight: 800 !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
     font-size: 0.9rem !important;
     border: 3px solid #000 !important;
     margin-bottom: 2rem !important;
@@ -1800,7 +1809,9 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .neo-description {
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
+    margin-top: 1.5rem !important;
     font-size: 1.1rem !important;
     line-height: 1.6 !important;
     margin-bottom: 3rem !important;
@@ -1817,7 +1828,7 @@ p, span, a, li, label, input, textarea, button {
 .neo-btn {
     padding: 1rem 1.5rem !important;
     font-weight: 800 !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
     font-size: 1rem !important;
     border: 3px solid #000 !important;
     text-decoration: none !important;
@@ -1852,7 +1863,7 @@ p, span, a, li, label, input, textarea, button {
 .neo-socials-title {
     font-weight: 800 !important;
     font-size: 0.9rem !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
 }
 
 .neo-socials {
@@ -1882,7 +1893,7 @@ p, span, a, li, label, input, textarea, button {
 
 .neo-hero-right {
     flex: 1 !important;
-    background: #ff70a6 !important;
+    background: var(--brutal-secondary, #ff70a6) !important;
     border-left: 3px solid #000 !important;
     display: flex !important;
     justify-content: center !important;
@@ -1920,17 +1931,42 @@ p, span, a, li, label, input, textarea, button {
     right: -40px !important;
     background: var(--brutal-accent) !important;
     border: 3px solid #000 !important;
-    padding: 1.5rem !important;
+    padding: 0 !important;
     box-shadow: 8px 8px 0px #000 !important;
-    color: #ffffff !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    color: #000000 !important;
+    font-family: var(--brutal-font) !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
     z-index: 10 !important;
 }
 
+.mac-terminal-header {
+    background: #fff !important;
+    border-bottom: 3px solid #000 !important;
+    padding: 0.5rem 0.8rem !important;
+    display: flex !important;
+    gap: 0.4rem !important;
+    align-items: center !important;
+}
+
+.mac-btn {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    border: 2px solid #000 !important;
+    display: inline-block !important;
+}
+
+.mac-btn.close { background: #ff5f56 !important; }
+.mac-btn.minimize { background: #ffbd2e !important; }
+.mac-btn.expand { background: #27c93f !important; }
+
+.mac-terminal-body {
+    padding: 1.2rem 1.5rem !important;
+}
+
 .neo-code-snippet .code-prompt {
-    color: var(--brutal-accent) !important;
+    color: #000000 !important;
 }
 
 .neo-code-snippet .code-line {
@@ -1966,7 +2002,7 @@ p, span, a, li, label, input, textarea, button {
     font-weight: 900 !important;
     text-transform: uppercase !important;
     color: #000 !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
     display: flex !important;
     align-items: center !important;
     white-space: nowrap !important;
@@ -1988,6 +2024,7 @@ p, span, a, li, label, input, textarea, button {
         border-bottom: 3px solid #000 !important;
         border-top: none !important;
         padding: 4rem 2rem 8rem !important;
+        margin-top: 4rem !important;
     }
     
     .neo-code-snippet {
@@ -2033,7 +2070,7 @@ p, span, a, li, label, input, textarea, button {
     z-index: 1000 !important;
     background: #fff !important;
     border-bottom: 4px solid #000 !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
 }
 
 .neo-nav-left {
@@ -2092,7 +2129,7 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .neo-nav-right a {
-    color: #fff !important;
+    color: #000000 !important;
     text-decoration: none !important;
     font-weight: 900 !important;
     font-size: 1.1rem !important;
@@ -2109,8 +2146,7 @@ p, span, a, li, label, input, textarea, button {
 /* Responsive Neo-Nav */
 @media (max-width: 900px) {
     .neo-nav-links {
-        display: none !important;
-        position: absolute !important;
+        position: fixed !important;
         top: 70px !important;
         left: 0 !important;
         width: 100% !important;
@@ -2120,10 +2156,17 @@ p, span, a, li, label, input, textarea, button {
         gap: 0 !important;
         border-bottom: 4px solid #000 !important;
         border-top: 4px solid #000 !important;
+        z-index: -1 !important;
+        transform: translateY(-150%) !important;
+        opacity: 0 !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+        pointer-events: none !important;
     }
     
     .neo-nav-links.mobile-open {
-        display: flex !important;
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
     }
     
     .neo-nav-links li {
@@ -2144,7 +2187,7 @@ p, span, a, li, label, input, textarea, button {
     .neo-nav-center .mobile-menu-btn {
         display: block !important;
         margin-left: auto !important;
-        margin-right: 2rem !important;
+        margin-right: 1.5rem !important;
         background: none !important;
         border: none !important;
         font-size: 1.5rem !important;
@@ -2280,7 +2323,7 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .neo-skill-name {
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
     font-weight: 900 !important;
     font-size: 1.1rem !important;
     text-transform: uppercase !important;
@@ -2314,7 +2357,7 @@ p, span, a, li, label, input, textarea, button {
 }
 
 .neo-domain-list li {
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: var(--brutal-font) !important;
     font-weight: 900 !important;
     font-size: 2rem !important;
     text-transform: uppercase !important;

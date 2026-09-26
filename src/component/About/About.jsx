@@ -70,21 +70,28 @@ const About = () => {
       <div className="neo-hero-right">
         <div className="neo-image-container">
           <div className="neo-image-wrapper">
-            <img src="/profile.png" alt={profileData.name} className="neo-profile-img" />
+            <img src="https://w4eqgj9ja9svdrke.public.blob.vercel-storage.com/krishnapatel2.png" alt={profileData.name} className="neo-profile-img" />
           </div>
           
           {/* Floating Code Snippet */}
           <motion.div 
-            className="neo-code-snippet"
+            className="neo-code-snippet mac-terminal"
             initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ delay: 0.6, type: 'spring' }}
           >
-            <div className="code-line"><span className="code-prompt">&gt;</span> const developer = {'{'}</div>
-            <div className="code-line indented">code: 'Java, Python',</div>
-            <div className="code-line indented">focus: 'Backend, Cloud, AI',</div>
-            <div className="code-line indented">passion: 'Problem Solving'</div>
-            <div className="code-line">{'}'}</div>
+            <div className="mac-terminal-header">
+              <span className="mac-btn close"></span>
+              <span className="mac-btn minimize"></span>
+              <span className="mac-btn expand"></span>
+            </div>
+            <div className="mac-terminal-body">
+              <div className="code-line"><span className="code-prompt">&gt;</span> const developer = {'{'}</div>
+              <div className="code-line indented">code: 'Java, Python',</div>
+              <div className="code-line indented">focus: 'Backend, Cloud, AI',</div>
+              <div className="code-line indented">passion: 'Problem Solving'</div>
+              <div className="code-line">{'}'}</div>
+            </div>
           </motion.div>
         </div>
       </div>

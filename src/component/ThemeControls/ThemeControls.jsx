@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 
+import themeData from '../../../data/theme.json';
 
 const ThemeControls = () => {
   const { isDarkMode, primaryColor, toggleDarkMode, changePrimaryColor } = useTheme();
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
 
-  const colorOptions = [
-    { color: '#10b981', title: 'Green' },
-    { color: '#3B82F6', title: 'Blue' },
-    { color: '#FACC15', title: 'Yellow' },
-    { color: '#f97316', title: 'Orange' },
-    { color: '#ef4444', title: 'Red' }
-  ];
+  const colorOptions = themeData.colorOptions;
 
   // Close color options panel when clicking outside of it
   useEffect(() => {
