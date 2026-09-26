@@ -3,33 +3,25 @@ import profileData from '../../../data/profile.json';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   const navItems = [
-    { id: 'about', iconInactive: 'far fa-user', iconActive: 'fas fa-user', text: 'About' },
-    { id: 'skills', iconInactive: 'far fa-keyboard', iconActive: 'fas fa-code', text: 'Skills' },
-    { id: 'experience', iconInactive: 'far fa-folder', iconActive: 'fas fa-briefcase', text: 'Experience' },
-    { id: 'badges', iconInactive: 'far fa-id-badge', iconActive: 'fas fa-certificate', text: 'Badges' },
-    { id: 'projects', iconInactive: 'far fa-lightbulb', iconActive: 'fas fa-project-diagram', text: 'Projects' },
-    { id: 'contact', iconInactive: 'far fa-envelope', iconActive: 'fas fa-paper-plane', text: 'Contact' }
+    { id: 'about', text: 'About' },
+    { id: 'skills', text: 'Skills' },
+    { id: 'projects', text: 'Projects' },
+    { id: 'experience', text: 'Experience' },
+    { id: 'badges', text: 'Certifications' }
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 200);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const sections = navItems.map(item => document.getElementById(item.id)).filter(Boolean);
+    // Also include 'contact' for intersection observer even if it's not in the main nav loop
+    const sections = [...navItems.map(item => item.id), 'contact']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
     
     const observerOptions = {
       root: null,
-      rootMargin: '-40% 0px -45% 0px', // Detect when a section is active in the viewport middle
+      rootMargin: '-40% 0px -45% 0px',
       threshold: 0
     };
 
@@ -69,38 +61,43 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`top-nav ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-content">
-        <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <span className="nav-name" style={{ fontFamily: 'var(--brutal-font)', fontSize: '1.5rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{profileData.name}</span>
-        </div>
+    <nav className="neo-nav">
+      <div className="neo-nav-left">
+        <span className="neo-nav-brand">{'>'} {profileData.name.split(' ')[0].toUpperCase()} DEV</span>
+      </div>
 
+      <div className="neo-nav-center">
         <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
           <i className="fas fa-bars"></i>
         </button>
+        <ul className={`neo-nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className={activeSection === item.id ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <div className={`nav-container ${isMobileMenuOpen ? 'active' : ''}`}>
-          <div className="nav-icons-container">
-            <ul className="nav-links">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    title={item.text}
-                    className={activeSection === item.id ? 'active' : ''}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(item.id);
-                    }}
-                  >
-                    <i className={activeSection === item.id ? item.iconActive : item.iconInactive}></i>
-                    <span className="nav-text">{item.text}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="neo-nav-right">
+        <a 
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('contact');
+          }}
+        >
+          CONTACT ME ↗
+        </a>
       </div>
     </nav>
   );

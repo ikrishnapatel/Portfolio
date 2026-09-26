@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-social">
+        <div className="footer-social" style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
           {profileData.socialLinks?.map((link, index) => (
             <a 
               key={index}
@@ -15,9 +15,10 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
               title={link.platform}
+              className="neo-social-btn"
             >
               {link.isSvg ? (
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                   <path d={link.svgPath}/>
                 </svg>
               ) : (

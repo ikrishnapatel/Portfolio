@@ -1,160 +1,95 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import RotatingText from '../UI/RotatingText/RotatingText';
-import MetaBalls from '../UI/MetaBalls/MetaBalls';
-import { useTheme } from '../../context/ThemeContext';
 import profileData from '../../../data/profile.json';
 
 const About = () => {
-  const { primaryColor } = useTheme();
-
   return (
-    <section id="about" className="section about-section" style={{ position: 'relative', overflow: 'hidden' }}>
-      <MetaBalls
-        color={primaryColor}
-        cursorBallColor={primaryColor}
-        cursorBallSize={4}
-        ballCount={25}
-        animationSize={50}
-        enableMouseInteraction
-        enableTransparency={true}
-        hoverSmoothness={0.08}
-        clumpFactor={1}
-        speed={0.15}
-      />
-
-      {/* Floating Badges */}
-      <motion.div 
-        className="floating-badge badge-2 home-talk-btn"
-        initial={{ y: 0 }}
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        style={{
-          position: 'absolute',
-          bottom: '25%',
-          right: '18%',
-          zIndex: 2,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.8rem',
-          maxWidth: '300px',
-          cursor: 'default',
-          textTransform: 'uppercase'
-        }}
-      >
-        <i className="fas fa-briefcase" style={{ fontSize: '1.5rem' }}></i>
-        <span style={{ fontSize: '0.9rem', fontWeight: 'bold', lineHeight: 1.2 }}>3+ Years Enterprise Experience</span>
-      </motion.div>
-
-      <div className="section-content about-container" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="about-text-column">
-          <motion.h4 
-            className="about-tagline"
+    <section id="about" className="neo-hero-section">
+      {/* Left Column - Grid Background */}
+      <div className="neo-hero-left">
+        <div className="neo-hero-content">
+          <motion.div 
+            className="neo-tag"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 1, y: 0 }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <span>{profileData.taglinePrefix || "I'M "}</span>
-              <RotatingText
-                texts={profileData.titles || ['Backend Engineer','Cloud Engineer', 'AI Engineer']}
-                mainClassName="rotating-text-brutal"
-                style={{
-                  backgroundColor: 'var(--brutal-accent)',
-                  color: 'var(--brutal-bg)',
-                  padding: '2px 8px',
-                  borderRadius: '4px',
-                  overflow: 'hidden',
-                  display: 'inline-flex',
-                  justifyContent: 'center'
-                }}
-                staggerFrom="random"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.02}
-                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={2100}
-                splitBy="characters"
-                auto
-                loop
-              />
-            </div>
-          </motion.h4>
-          <motion.h2 
-            className="about-heading"
+            HEY, I'M {profileData.name.split(' ')[0].toUpperCase()} 👋
+          </motion.div>
+          
+          <motion.h1 
+            className="neo-title"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            SOFTWARE<br/>ENGINEER
+          </motion.h1>
+          
+          <motion.p 
+            className="neo-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
           >
             {profileData.description}
-          </motion.h2>
-        </div>
-
-        <div className="about-download-cv" style={{ display: 'flex', flexDirection: 'column', marginTop: '2.5rem', gap: '1rem', maxWidth: '360px' }}>
-          <div style={{ display: 'flex', gap: '1rem', width: '100%' }}>
-            <a 
-              href="https://github.com/ikrishnapatel" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-talk-btn"
-              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', flex: 1, padding: '1rem 0' }}
-            >
-              <span>GitHub</span>
-              <i className="fab fa-github"></i>
-            </a>
-            <a 
-              href="https://linkedin.com/in/ikrishnapatel" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-talk-btn"
-              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', flex: 1, padding: '1rem 0' }}
-            >
-              <span>LinkedIn</span>
-              <i className="fab fa-linkedin"></i>
-            </a>
-          </div>
-          <a 
-            href="/Krishna_Patel_CV.pdf" 
-            download 
-            className="home-talk-btn"
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.8rem', textDecoration: 'none', width: '100%' }}
+          </motion.p>
+          
+          <motion.div 
+            className="neo-buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
           >
-            <span>Download CV</span>
-            <i className="fas fa-download"></i>
-          </a>
+            <a href="#projects" className="neo-btn neo-btn-primary">VIEW MY WORK ↗</a>
+            <a href="/Krishna_Patel_CV.pdf" download className="neo-btn neo-btn-secondary">DOWNLOAD RESUME ↓</a>
+          </motion.div>
+          
+          <motion.div 
+            className="neo-socials-wrapper"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <span className="neo-socials-title">CONNECT WITH ME</span>
+            <div className="neo-socials">
+              {profileData.socialLinks.map((link, idx) => (
+                <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className="neo-social-btn" title={link.platform}>
+                  {link.isSvg ? (
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em"><path d={link.svgPath} /></svg>
+                  ) : (
+                    <i className={link.iconClass}></i>
+                  )}
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Tech Stack Ticker */}
-      <div style={{
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        background: 'var(--brutal-card-bg)',
-        borderTop: 'var(--brutal-border-width) solid var(--brutal-border)',
-        padding: '0.8rem 0',
-        zIndex: 2,
-        display: 'flex',
-        overflow: 'hidden',
-        whiteSpace: 'nowrap'
-      }}>
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-          style={{ display: 'flex', gap: '2rem' }}
-        >
-          {[...Array(4)].flatMap(() => ['Java', 'Spring Boot', 'AWS', 'Google Cloud', 'LLMs', 'LangChain4j']).map((tech, i) => (
-            <span key={i} style={{ fontSize: '1.2rem', fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--brutal-muted)', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}>
-              {tech} <span style={{ color: 'var(--brutal-accent)', margin: '0 2rem' }}>|</span>
-            </span>
-          ))}
-        </motion.div>
+      {/* Right Column - Pink Background */}
+      <div className="neo-hero-right">
+        <div className="neo-image-container">
+          <div className="neo-image-wrapper">
+            <img src="/profile.png" alt={profileData.name} className="neo-profile-img" />
+          </div>
+          
+          {/* Floating Code Snippet */}
+          <motion.div 
+            className="neo-code-snippet"
+            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ delay: 0.6, type: 'spring' }}
+          >
+            <div className="code-line"><span className="code-prompt">&gt;</span> const developer = {'{'}</div>
+            <div className="code-line indented">code: 'Java, Python',</div>
+            <div className="code-line indented">focus: 'Backend, Cloud, AI',</div>
+            <div className="code-line indented">passion: 'Problem Solving'</div>
+            <div className="code-line">{'}'}</div>
+          </motion.div>
+        </div>
       </div>
+      
+
     </section>
   );
 };

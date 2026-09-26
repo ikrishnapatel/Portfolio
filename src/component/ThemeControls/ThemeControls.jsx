@@ -58,13 +58,6 @@ const ThemeControls = () => {
         </div>
       </div>
       
-      <button 
-        className={`dark-mode-toggle brutal-btn ${isDarkMode ? 'active' : ''}`}
-        onClick={toggleDarkMode}
-        title={isDarkMode ? 'Switch to Day Mode' : 'Switch to Night Mode'}
-      >
-        <i className={isDarkMode ? 'fas fa-sun' : 'fas fa-moon'}></i>
-      </button>
     </div>
   );
 };
