@@ -34,8 +34,8 @@ const Experience = () => {
                 <div className="timeline-content">
                   <h4>
                     {exp.company}
-                    {exp.client && (
-                      <span className="client-badge">Client: {exp.client}</span>
+                    {exp.domain && (
+                      <span className="client-badge">Domain: {exp.domain}</span>
                     )}
                   </h4>
                   

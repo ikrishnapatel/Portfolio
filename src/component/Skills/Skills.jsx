@@ -9,7 +9,9 @@ const Skills = () => {
   const categories = [
     { id: 'backend', icon: 'fas fa-server', label: 'Backend' },
     { id: 'cloud', icon: 'fas fa-cloud', label: 'Cloud' },
+    { id: 'ai', icon: 'fas fa-brain', label: 'AI' },
     { id: 'devops', icon: 'fas fa-cogs', label: 'DevOps' },
+    { id: 'database', icon: 'fas fa-database', label: 'Database' },
     { id: 'frontend', icon: 'fas fa-laptop-code', label: 'Frontend' }
   ];
 

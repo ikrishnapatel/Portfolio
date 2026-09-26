@@ -7,16 +7,7 @@
         "AI Engineer"
     ],
     "description": "Creating intuitive and functional interfaces, architecting robust backend systems, and integrating AI to elevate product quality.",
-    "stats": [
-        {
-            "value": "3",
-            "label": "Years of Experience"
-        },
-        {
-            "value": "2",
-            "label": "Completed Projects"
-        }
-    ],
+
     "contact": {
         "toName": "Krishna Patel"
     },

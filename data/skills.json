@@ -101,5 +101,45 @@
             "experience": "2 year",
             "certified": false
         }
+    ],
+    "ai": [
+        {
+            "name": "Google ADK",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+            "experience": "1 year",
+            "certified": false
+        },
+        {
+            "name": "GitHub Copilot",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+            "experience": "1 year",
+            "certified": false
+        },
+        {
+            "name": "Spring AI",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+            "experience": "1 year",
+            "certified": false
+        }
+    ],
+    "database": [
+        {
+            "name": "Postgres",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+            "experience": "2 years",
+            "certified": false
+        },
+        {
+            "name": "Chroma DB",
+            "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/chroma.svg",
+            "experience": "1 year",
+            "certified": false
+        },
+        {
+            "name": "GraphQL",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+            "experience": "1 year",
+            "certified": false
+        }
     ]
 }

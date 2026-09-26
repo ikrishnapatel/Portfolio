@@ -313,6 +313,29 @@ p, span, a, li, label, input, textarea, button {
     background: var(--brutal-accent) !important;
 }
 
+/* Hollow Talk Button - Brutalist */
+.hollow-talk-btn {
+    background: var(--brutal-bg) !important;
+    color: var(--brutal-accent) !important;
+    border: var(--brutal-border-width) solid var(--brutal-accent) !important;
+    font-family: var(--brutal-font) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    padding: 1rem 2.5rem !important;
+    font-size: 1rem !important;
+    box-shadow: 4px 4px 0px var(--brutal-accent) !important;
+    transition: var(--brutal-transition) !important;
+    cursor: pointer !important;
+}
+
+.hollow-talk-btn:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0px var(--brutal-accent) !important;
+    background: var(--brutal-accent) !important;
+    color: var(--brutal-bg) !important;
+}
+
 /* ====================================================
    ABOUT - GIANT MONOSPACE HEADINGS
    ==================================================== */
